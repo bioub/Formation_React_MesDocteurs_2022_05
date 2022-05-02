@@ -40,10 +40,22 @@
 // Exemple avec JSX
 // Depuis React 17, plus besoin d'importer React lorsqu'on fait du JSX
 
-function Hello() {
+// function Hello(props) {
+//   const name = props.name ?? "Jean";
+//   const age = props.age ?? "Jean";
+//   return (
+//     <div className="Hello" id="box" title="Mon composant">
+//       Hello <span className="prenom">{name}</span>, I'm {age}
+//     </div>
+//   );
+// }
+
+function Hello({ name = 'Jean', age = 20 }) {
+  console.log('Hello');
+  
   return (
     <div className="Hello" id="box" title="Mon composant">
-      Hello <span className="prenom">Romain</span>
+      Hello <span className="prenom">{name}</span>, I'm {age}
     </div>
   );
 }

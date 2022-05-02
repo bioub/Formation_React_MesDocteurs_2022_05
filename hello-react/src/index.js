@@ -13,11 +13,8 @@ import App from './App';
 // Depuis React 18
 const root = createRoot(document.getElementById('root'));
 
-
-setInterval(() => {
-  root.render(
-    <StrictMode>
-      <App />
-    </StrictMode>
-  );
-}, 1000);
+root.render(
+  <StrictMode>
+    <App />
+  </StrictMode>
+);
