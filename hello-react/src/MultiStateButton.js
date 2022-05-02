@@ -19,6 +19,7 @@ export default MultiStateButton;
 
 /*
 Exercice 2 :
+- appeler MuliStateButton depuis app comme ceci <MultiStateButton items={['Toto', 'Titi', 'Tata']} />
 - ajouter une clé selected sur le state (qui sera la valeur séléctionnée)
 - dans le constructeur de MultiStateButton affecter le premier élement
 du tableau au state selected (MAUVAISE pratique)
