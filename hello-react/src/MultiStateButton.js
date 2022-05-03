@@ -37,3 +37,12 @@ du tableau au state selected (MAUVAISE pratique)
 - au clic du bouton mettre à jour selected
 (si vous êtes sur le dernier élément revenir au premier)
 */
+
+/*
+Exercice 4 :
+Transformer MultiStateButton en un composant controllé
+Remonter la valeur selected au niveau du state de App (clé name)
+
+Exercice 5 :
+Slide 60
+*/
