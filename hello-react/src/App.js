@@ -1,3 +1,4 @@
+import { Component } from 'react';
 import Clock from './Clock';
 import CounterControlled from './CounterControlled';
 import CounterUncontrolled from './CounterUncontrolled';
@@ -8,7 +9,7 @@ import NestedClicks from './NestedClicks';
 import Select from './Select';
 import UserForm from './UserForm';
 
-class App {
+class App extends Component {
   state = {
     count: 0,
     name: 'Titi',
