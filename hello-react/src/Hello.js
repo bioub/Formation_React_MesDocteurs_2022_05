@@ -6,13 +6,11 @@
 //   divEl.id = 'box';
 //   divEl.title = 'Mon composant';
 
-//   const textNode = document.createTextNode('Hello ');
-
 //   const spanEl = document.createElement('span');
 //   spanEl.className = 'prenom';
 //   spanEl.innerText = 'Romain';
 
-//   divEl.append(textNode, spanEl);
+//   divEl.append('Hello ', spanEl);
 
 //   document.body.append(divEl);
 // }
@@ -42,7 +40,7 @@
 
 // function Hello(props) {
 //   const name = props.name ?? "Jean";
-//   const age = props.age ?? "Jean";
+//   const age = props.age ?? 20;
 //   return (
 //     <div className="Hello" id="box" title="Mon composant">
 //       Hello <span className="prenom">{name}</span>, I'm {age}

@@ -1,3 +1,4 @@
+import './index.css';
 import { StrictMode } from 'react';
 
 // Jusqu'à React 17
@@ -14,7 +15,10 @@ import App from './App';
 const root = createRoot(document.getElementById('root'));
 
 root.render(
-  <StrictMode>
+  // <StrictMode>
     <App />
-  </StrictMode>
+  // </StrictMode>
 );
+
+
+console.log(process.env.REACT_APP_BACKEND_URL);
