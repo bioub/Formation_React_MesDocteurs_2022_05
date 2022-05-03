@@ -31,7 +31,26 @@
 			""
 		],
 		"description": "Function Component"
+	},
+	"Class Component": {
+		"scope": "javascript,javascriptreact",
+		"prefix": "cc",
+		"body": [
+			"import { Component } from 'react';",
+			"",
+			"class $TM_FILENAME_BASE extends Component {",
+			"  render() {",
+			"    return (",
+			"      <div className=\"$TM_FILENAME_BASE\">",
+			"        ${0:$TM_FILENAME_BASE works!}",
+			"      </div>",
+			"    );",
+			"  }",
+			"}",
+			"",
+			"export default $TM_FILENAME_BASE;",
+			""
+		],
+		"description": "Class Component"
 	}
-	// Exercice 3
-	// Créer un snippet pour créer une classe en vous inspirant du précédent
 }
