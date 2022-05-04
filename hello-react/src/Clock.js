@@ -51,7 +51,8 @@ class Clock extends Component {
     now: new Date(),
   };
   componentDidMount() {
-    setInterval(() => {
+    const { delay = 1000 } = this.props;
+    this.interval = setInterval(() => {
       // do not mutate state directly
       // this.state.now = new Date();
 
@@ -60,11 +61,25 @@ class Clock extends Component {
       this.setState({
         now: new Date(),
       });
-    }, 1000);
+    }, delay);
+  }
+  componentDidUpdate(prevProps) {
+    const { delay = 1000 } = this.props;
+    if (prevProps.delay !== delay) {
+      clearInterval(this.interval);
+      this.interval = setInterval(() => {
+        this.setState({
+          now: new Date(),
+        });
+      }, delay);
+    }
+  }
+  componentWillUnmount() {
+    clearInterval(this.interval);
   }
   render() {
     const { now, componentName } = this.state;
-    const { format = 'HH:mm:ss',  } = this.props;
+    const { format = 'HH:mm:ss' } = this.props;
     return (
       <div className="Clock">
         Il est{" "}

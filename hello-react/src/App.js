@@ -1,7 +1,9 @@
 import { Component } from 'react';
 import Clock from './Clock';
+import ClockWithControls from './ClockWithControls';
 import CounterControlled from './CounterControlled';
 import CounterUncontrolled from './CounterUncontrolled';
+import CounterUncontrolledHook from './CounterUncontrolledHook';
 import Hello from './Hello';
 import Helloworld from './Helloworld';
 import MultiStateButton from './MultiStateButton';
@@ -35,12 +37,17 @@ class App extends Component {
       <div className="App">
         <nav className="menu">MyApp</nav>
         {/* React.createElement(Hello, { name: 'Toto', age: 36, isTrainer: true }) */}
-        <Hello name={234} />
+        {/* <Hello name={234} /> */}
         <Hello name={name} age={36} isTrainer />
         <Clock format="HH:mm:ss" />
         <CounterUncontrolled />
         <CounterUncontrolled />
         <CounterUncontrolled />
+
+
+        <CounterUncontrolledHook />
+        <CounterUncontrolledHook />
+        <CounterUncontrolledHook />
 
         <CounterControlled count={count} onIncrement={this.handleIncrement} />
         <CounterControlled count={count} onIncrement={this.handleIncrement} />
@@ -51,6 +58,8 @@ class App extends Component {
         <Select options={['Toto', 'Titi', 'Tata']} value={name} onSelect={this.handleSelect} />
         <UserForm />
         <Todos />
+
+        <ClockWithControls />
       </div>
     );
   }

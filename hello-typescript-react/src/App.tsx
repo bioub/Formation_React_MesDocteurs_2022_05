@@ -1,3 +1,4 @@
+import CounterUncontrolledHook from "./CounterUncontrolledHook";
 import Hello from "./Hello";
 import Todos from "./todos/Todos";
 
@@ -6,6 +7,9 @@ function App() {
     <div className="App">
       <Hello  />
       <Todos />
+      <CounterUncontrolledHook />
+      <CounterUncontrolledHook />
+      <CounterUncontrolledHook />
     </div>
   );
 }
