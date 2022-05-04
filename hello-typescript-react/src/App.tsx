@@ -1,10 +1,11 @@
 import Hello from "./Hello";
-import Select from "./Select";
+import Todos from "./todos/Todos";
 
 function App() {
   return (
     <div className="App">
       <Hello  />
+      <Todos />
     </div>
   );
 }
