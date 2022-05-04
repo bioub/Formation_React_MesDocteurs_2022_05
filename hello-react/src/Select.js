@@ -1,11 +1,9 @@
 import styles from './Select.module.scss';
 import { Component, createRef } from 'react';
 
-
 class Select extends Component {
   state = {
     open: false,
-    value: this.props.options[0]
   };
   hostRef = createRef(null);
   handleHostClick = () => {
@@ -13,21 +11,20 @@ class Select extends Component {
     this.setState({
       open: !open,
     });
-  }
+  };
   handleDocumentClick = (event) => {
     if (this.hostRef.current.contains(event.target)) {
       return;
     }
-    
+
     this.setState({
       open: false,
     });
   };
   handleOptionClick = (option) => {
-    this.setState({
-      value: option
-    })
-  }
+    const { onSelect } = this.props;
+    onSelect(option);
+  };
   componentDidMount() {
     document.addEventListener('click', this.handleDocumentClick, { capture: true });
   }
@@ -35,15 +32,14 @@ class Select extends Component {
     document.removeEventListener('click', this.handleDocumentClick, { capture: true });
   }
   render() {
-    const { options } = this.props;
-    const { value, open } = this.state;
+    const { options, value } = this.props;
+    const { open } = this.state;
 
     if (!options?.length) {
       throw new Error('no options in Select');
     }
 
     // let menuEl;
-
     // if (open) {
     //   menuEl = <div>Menu avec les options</div>;
     // } else {
@@ -67,11 +63,13 @@ class Select extends Component {
 
     return (
       <div ref={this.hostRef} className={styles.host} onClick={this.handleHostClick}>
-        <div className={styles.value}>{value.label}</div>
+        <div className={styles.value}>{value}</div>
         {open && (
           <div className={styles.menu}>
             {options.map((option) => (
-              <div className={styles.option} key={option.value} onClick={() => this.handleOptionClick(option)}>{option.label}</div>
+              <div className={styles.option} key={option} onClick={() => this.handleOptionClick(option)}>
+                {option}
+              </div>
             ))}
           </div>
         )}

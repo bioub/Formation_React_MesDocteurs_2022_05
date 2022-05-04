@@ -1,26 +1,17 @@
 import React, { Component } from 'react';
 
 class MultiStateButton extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      selected: props.items[0],
-    };
-  }
   handleClick = () => {
-    const { selected } = this.state;
-    const { items } = this.props;
+    const { items, value, onSelect } = this.props;
 
-    const index = items.indexOf(selected);
-    this.setState({
-      selected: items[(index + 1) % items.length],
-    });
+    const index = items.indexOf(value);
+    onSelect(items[(index + 1) % items.length]);
   };
   render() {
-    const { selected } = this.state;
+    const { value } = this.props;
     return (
       <button className="MultiStateButton" onClick={this.handleClick}>
-        {selected}
+        {value}
       </button>
     );
   }

@@ -30,7 +30,8 @@ class UserForm extends Component {
             name="isGoing"
             type="checkbox"
             checked={this.state.isGoing}
-            onChange={this.handleInputChange} />
+            onChange={this.handleInputChange}
+             />
         </label>
         <br />
         <label>
@@ -39,7 +40,8 @@ class UserForm extends Component {
             name="numberOfGuests"
             type="number"
             value={this.state.numberOfGuests}
-            onChange={this.handleInputChange} />
+            onChange={this.handleInputChange} 
+            />
         </label>
       </form>
     );
