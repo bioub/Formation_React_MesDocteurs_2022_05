@@ -35,6 +35,7 @@ class App extends Component {
       <div className="App">
         <nav className="menu">MyApp</nav>
         {/* React.createElement(Hello, { name: 'Toto', age: 36, isTrainer: true }) */}
+        <Hello name={234} />
         <Hello name={name} age={36} isTrainer />
         <Clock format="HH:mm:ss" />
         <CounterUncontrolled />

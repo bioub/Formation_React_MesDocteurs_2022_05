@@ -48,6 +48,8 @@
 //   );
 // }
 
+import { string } from 'prop-types';
+
 function Hello({ name = 'Jean', age = 20 }) {
   console.log('Hello');
   
@@ -56,6 +58,10 @@ function Hello({ name = 'Jean', age = 20 }) {
       Hello <span className="prenom">{name}</span>, I'm {age}
     </div>
   );
+}
+
+Hello.propTypes = {
+  name: string,
 }
 
 export default Hello;
