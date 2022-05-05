@@ -1,7 +1,11 @@
+import Counter from "./Counter";
+
 function HomePage() {
   return (
     <div className="HomePage">
-      HomePage works!
+      <Counter />
+      <Counter />
+      <Counter />
     </div>
   );
 }
