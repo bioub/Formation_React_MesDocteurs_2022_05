@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "hello-react"
+		},
+		{
+			"path": "hello-typescript-react"
+		},
+		{
+			"path": "demo-redux"
+		},
+		{
+			"path": "hello-react-redux"
+		}
+	],
+	"settings": {}
+}
