@@ -1,18 +1,14 @@
-import { increment } from '../store/actions';
-import { useAppDispatch, useAppSelector } from '../store/hooks';
-import { countSelector } from '../store/selectors';
+type Props = {
+  count: number;
+  onIncrement(): void;
+};
 
-function Counter() {
-  const count = useAppSelector(countSelector);
-  const dispatch = useAppDispatch();
-
-  function handleClick() {
-    dispatch(increment());
-  }
-
-  return <button className="Counter" onClick={handleClick}>{count}</button>;
+function Counter({ count, onIncrement }: Props) {
+  return (
+    <button className="Counter" onClick={onIncrement}>
+      {count}
+    </button>
+  );
 }
 
-
 export default Counter;
-

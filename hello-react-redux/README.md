@@ -1,46 +1,90 @@
-# Getting Started with Create React App
+# Exercices Redux
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) TS template.
+## HelloPage
 
-## Available Scripts
+Dans HelloPage utiliser les 3 composants :
+- Hello
+- Select
+- MultiStateButton
 
-In the project directory, you can run:
+Comme dans les projets précédents les choix possible seront
+`['Toto', 'Titi', 'Tata']`
 
-### `npm start`
+En réutilisant `setName` et `nameReducer` du projet demo-redux
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Stocker le nom à afficher dans ces composants dans le store redux.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Vous pouvez appeler les hooks redux directement dans HelloPage (ou créer les containers au choix).
 
-### `npm test`
+## Todos
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Migrer le state de Todos vers Redux
 
-### `npm run build`
+Le state global devra avoir cette forme là
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+{
+  count: 1,
+  counter: {
+    value: 56
+  },
+  todos: {
+    newTodo: 'Achet',
+    items: [{
+      id: 1,
+      title: 'Acheter du pain',
+      completed: false,
+    }, {
+      id: 2,
+      title: 'Aller au sport',
+      completed: true,
+    }, {
+      id: 3,
+      title: 'Utiliser Redux',
+      completed: false,
+    }],
+  }
+}
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Actions
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Avec createAction (ou les slices) créer 2 actions :
+- todoAdd (ajoute une todo au tableau)
+- todoChange (éditer la valeur dans le champs)
 
-### `npm run eject`
+## Reducers
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Avec createReducer (ou les slices) créer un reducer `todosReducer` qui va traiter les 2 actions précédentes.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Et enregistrer ce reducer à l'appel de configureStore.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Traiter todoChange. L'action todoChange ressemblera à :
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```
+{
+  type: 'todos/todoChange',
+  payload: 'Ache'
+}
+```
 
-## Learn More
+Traiter todoAdd. L'action todoAdd ressemblera à :
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+{
+  type: 'todos/todoAdd',
+  payload: {
+    id: 123,
+    title: 'Acheter du pain',
+    completed: false,
+  }
+}
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Avec l'extension Redux Devtools, tester via le bouton dispatch que le reducer fonctionne
+
+## Ecrire la version connectée du composant Todos
+
+Avec useAppDispatch (ou useDispatch) et useAppSelector (ou useSelector) écrire la version Todos connectée au store redux
+
+## Optionnel (TODO_DELETE)  

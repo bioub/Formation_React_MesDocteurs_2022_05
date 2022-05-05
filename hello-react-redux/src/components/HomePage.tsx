@@ -1,11 +1,11 @@
-import Counter from "./Counter";
+import CounterContainer from "../containers/CounterContainer";
 
 function HomePage() {
   return (
     <div className="HomePage">
-      <Counter />
-      <Counter />
-      <Counter />
+      <CounterContainer />
+      <CounterContainer />
+      <CounterContainer />
     </div>
   );
 }
