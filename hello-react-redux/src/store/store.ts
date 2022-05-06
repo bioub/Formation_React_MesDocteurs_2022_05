@@ -2,6 +2,7 @@ import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
 import { countReducer, nameReducer } from './reducers';
 import counterReducer from '../features/counter/counterSlice';
 import todosReducer from '../features/todos/todosSlice';
+import usersReducer from '../features/users/usersSlice';
 
 export const store = configureStore({
   reducer: { // combineReducers
@@ -9,6 +10,7 @@ export const store = configureStore({
     count: countReducer,
     name: nameReducer,
     todos: todosReducer,
+    users: usersReducer,
   },
 });
 
