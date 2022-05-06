@@ -1,11 +1,11 @@
 type Props = {
   count: number;
-  onIncrement(): void;
+  onIncrement(v: number): void;
 };
 
 function Counter({ count, onIncrement }: Props) {
   return (
-    <button className="Counter" onClick={onIncrement}>
+    <button className="Counter" onClick={() => onIncrement(count)}>
       {count}
     </button>
   );

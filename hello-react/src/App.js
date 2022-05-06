@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import Button from './Button';
 import Clock from './Clock';
 import ClockWithControls from './ClockWithControls';
 import CounterControlled from './CounterControlled';
@@ -60,6 +61,10 @@ class App extends Component {
         <Todos />
 
         <ClockWithControls />
+
+        <Button>
+          <b>Test</b>
+        </Button>
       </div>
     );
   }

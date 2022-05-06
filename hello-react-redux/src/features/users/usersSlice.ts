@@ -1,16 +1,18 @@
 import { createAsyncThunk, createSlice, Dispatch, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from '../../store/store';
 import { User } from './User';
-import { fetchUsers } from './userAPI';
+import { fetchUserById, fetchUsers } from './userAPI';
 
 type UsersState = {
   loading: boolean;
   items: User[];
+  selectedItem?: User;
 };
 
 const initialState: UsersState = {
   loading: false,
   items: [],
+  selectedItem: undefined,
 };
 
 const slice = createSlice({
@@ -33,7 +35,10 @@ const slice = createSlice({
       .addCase(fetchUsersAsync.fulfilled, (state, action: PayloadAction<User[]>) => {
         state.loading = false;
         state.items = action.payload;
-      });
+      })
+      .addCase(fetchUserByIdAsync.fulfilled, (state, action: PayloadAction<User>) => {
+        state.selectedItem = action.payload;
+      })
   },
 });
 
@@ -54,4 +59,8 @@ export function fetchUsersThunk() {
 
 export const fetchUsersAsync = createAsyncThunk('users/fetchUsers', async () => {
   return await fetchUsers();
+});
+
+export const fetchUserByIdAsync = createAsyncThunk('users/fetchUserById', async (id: number) => {
+  return await fetchUserById(id);
 });
