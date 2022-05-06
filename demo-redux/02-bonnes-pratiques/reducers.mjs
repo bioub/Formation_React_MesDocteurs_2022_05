@@ -58,4 +58,8 @@ function nameReducer(state = initialState.name, action) {
 export const reducer = combineReducers({
   count: countReducer,
   name: nameReducer,
+  // todos: combineReducers({
+  //   items: itemsReducer,
+  //   newTodo: newTodoReducer
+  // })
 });

@@ -18,10 +18,15 @@ const initialState = {
 //   return state;
 // }
 
-const countReducer = rtk.createReducer(initialState.count, (builder) => {
-  builder
-    .addCase(increment, (state, action) => state + 1)
-    .addCase(decrement, (state, action) => state - 1);
+// const countReducer = rtk.createReducer(initialState.count, (builder) => {
+//   builder
+//     .addCase(increment, (state, action) => state + 1)
+//     .addCase(decrement, (state, action) => state - 1);
+// });
+
+const countReducer = rtk.createReducer(initialState.count, {
+  [increment]: (state, action) => state + 1,
+  [decrement]: (state, action) => state - 1,
 });
 
 // function nameReducer(state = initialState.name, action) {

@@ -4,7 +4,7 @@ import MultiStateButton from "./components/MultiStateButton.mjs";
 import Select from "./components/Select.mjs";
 import Counter from "./components/Counter.mjs";
 import rtk from "@reduxjs/toolkit";
-import { reducer } from "./reducers.mjs";
+import { reducer } from "./slices.mjs";
 
 const store = rtk.configureStore({
   reducer: reducer,

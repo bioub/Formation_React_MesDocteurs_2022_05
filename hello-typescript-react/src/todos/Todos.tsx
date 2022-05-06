@@ -84,10 +84,14 @@ function Todos() {
     ]);
   }
 
+  function handleDelete(todo: Todo) {
+    setTodos(todos.filter((t) => t.id !== todo.id));
+  }
+
   return (
     <div className="Todos">
       <TodoForm newTodo={newTodo} onNewTodoChange={handleNewTodoChange} onAdd={handleAdd} />
-      <TodosList items={todos} />
+      <TodosList items={todos} onDelete={handleDelete} />
     </div>
   );
 }
