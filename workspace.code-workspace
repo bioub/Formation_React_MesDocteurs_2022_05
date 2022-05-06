@@ -14,6 +14,9 @@
 		},
 		{
 			"path": "react-communication"
+		},
+		{
+			"path": "hello-optim"
 		}
 	],
 	"settings": {}
